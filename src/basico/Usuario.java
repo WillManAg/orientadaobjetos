@@ -12,6 +12,18 @@ public class Usuario {
 		this.nombre = nombre;
 		this.nomina = nomina;
 	}
+	
+	
+	
+
+	public Usuario() {
+		this.id = 1;
+	    this.nombre = "Sin nombre";
+	    this.nomina = 0.0;
+	}
+
+
+
 
 	// imprime todos los get para mostrar los datos llamando solo 1 método
 	public void mostrarDatos() {
@@ -23,9 +35,10 @@ public class Usuario {
 	}
 	
 	// cambia el valor de la nomina a un porcentaje que le llega
-	public void incrementarSalario(double porcentaje) {
+	
+	public void incrementarSalario(double porcentaje, int comienzo, int fin) {
 		
-		if (this.id >= 1 && this.id <= 10) {
+		if ((this.id >= comienzo && this.id <= fin) && (porcentaje >= 0 && porcentaje <= 100)) {
 			
 			this.nomina = this.nomina * (1 + porcentaje / 100);
 			
@@ -57,5 +70,11 @@ public class Usuario {
 	public int getId() {
 		return id;
 	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
 
 }

@@ -24,8 +24,9 @@ public class Main {
 		usu3.mostrarDatos();
 
 	
-		usu1.incrementarSalario(100);
-		usu2.incrementarSalario(100);
+		System.out.println("Introduce subida, comienzo y fin:");
+		usu1.incrementarSalario(100.00, 2, 10);
+		usu2.incrementarSalario(100.00, 2, 10);
 		
 		usu1.mostrarDatos();
 		usu2.mostrarDatos();
