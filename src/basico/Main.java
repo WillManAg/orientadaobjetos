@@ -4,10 +4,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		
 		Usuario usu1, usu2, usu3;
+
 		
 		usu1 = new Usuario(1, "William", 1600.00);
-		usu2 = new Usuario(2, "Wilson", 400.00);
+		usu2 = new Usuario(11, "Wilson", 400.00);
 		usu3 = new Usuario(3, "Robert", 2400.00);
 		
 		System.out.println("Usu1");
@@ -22,12 +24,19 @@ public class Main {
 		usu3.mostrarDatos();
 
 	
+		usu1.incrementarSalario(100);
+		usu2.incrementarSalario(100);
+		
+		usu1.mostrarDatos();
+		usu2.mostrarDatos();
 		
 		
 		
 		
 		
-
+		
+		
+		
 	}
 
 }

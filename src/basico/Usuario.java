@@ -21,6 +21,17 @@ public class Usuario {
 		System.out.println("Salario: " + this.getNomina());
 		
 	}
+	
+	// cambia el valor de la nomina a un porcentaje que le llega
+	public void incrementarSalario(double porcentaje) {
+		
+		if (this.id >= 1 && this.id <= 10) {
+			
+			this.nomina = this.nomina * (1 + porcentaje / 100);
+			
+		}
+		
+	}
 
 
 	public String getNombre() {
@@ -46,10 +57,5 @@ public class Usuario {
 	public int getId() {
 		return id;
 	}
-	
-	
-	
-	
-
 
 }
