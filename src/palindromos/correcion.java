@@ -53,11 +53,11 @@ public class correcion {
 		return soloLetras;
 	}
 	
-	
+	// SABES SI ES LETRA O NO ES LETRA
 	private boolean esLetra(char caracter) {
 		int posicion;
 		posicion=ABECEDARIO.indexOf(caracter);
-		// este if revisa si la letra está dentro, porque si no devuelve -1 es porque está en ABECEDARIO
+		// este if revisa si la letra está dentro de abecedario, porque si no devuelve -1 es porque está en ABECEDARIO
 		if (posicion!=-1) {
 			return true;
 		} else {
