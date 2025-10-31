@@ -122,7 +122,39 @@ public class Usuario {
 		}
 		return contadorDigitos;
 	}
+	// igual que con los digitos, comprueba con los caracteres ingleses si es letras
+	public int letrasEnNombre() {
+		int contadorLetras=0;
+		char caracter;
+		
+		for(int i=0; i < this.getNombre().length();i++) {
+			caracter=this.getNombre().charAt(i);
+			if ((caracter>='A' && caracter<='Z') || (caracter>='a' && caracter<='z')) {
+				contadorLetras++;
+			}
+		}
+		return contadorLetras;
+	}
 	
+	
+	// revisa si solo tiene 2 digitos en el nombre
+	public boolean dosDigitosEnNombre() {
+		int contadorDigitos = 0;
+		char caracter;
+
+		for (int i = 0; i > this.getNombre().length(); i++) {
+			caracter = this.getNombre().charAt(i);
+
+			if (Character.isDigit(caracter)) {
+				contadorDigitos++;
+				if (contadorDigitos > 2) {
+					return false;
+				}
+			}
+
+		}
+		return true;
+	}
 	
 	
 	
