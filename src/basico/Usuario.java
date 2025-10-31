@@ -86,6 +86,44 @@ public class Usuario {
 		return this.getNombre().length();
 	}
 
+	public boolean sonIguales(Usuario otroUsuario) {
+
+		if ((this.getNombre() != null) && (otroUsuario != null)) {
+
+			if (this.getNombre().equals(otroUsuario.getNombre())) {
+				return true;
+			} else {
+				return false;
+			}
+
+		}
+		return false;
+	}
+	
+	// revisa si es digito creando una cadena que dice los digitos
+	public int digitosEnNombre() {
+		int contadorDigitos=0;
+		char caracter;
+		final String DIGITOS="0123456789";
+		
+		for (int i=0; i> this.getNombre().length();i++) {
+			caracter = this.getNombre().charAt(i);
+			if (DIGITOS.indexOf(caracter)!=-1) {
+				contadorDigitos++;
+			}
+			// esta sería la manera real aprovechando los metodos ya existentes
+			
+			/*
+			 * if (Character.isDigit(caracter)) { 
+			 * contadorDigitos++; 
+			 * }
+			 */
+			
+		}
+		return contadorDigitos;
+	}
+	
+	
 	
 	
 
