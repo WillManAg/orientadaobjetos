@@ -18,7 +18,7 @@ public class Usuario {
 
 	public Usuario() {
 		this.id = 1;
-	    this.nombre = "Sin nombre";
+	    this.nombre = "Usuario no creado";
 	    this.nomina = 0.0;
 	}
 
@@ -45,7 +45,49 @@ public class Usuario {
 		}
 		
 	}
+	
+	public void decrementarSalarioPar() {
+		
+		if (this.id % 2== 0) {
+			this.nomina = this.nomina * 0.80;
+		}
+		
+	}
+	
+	public Usuario compararSueldos(Usuario otroUsuario) {
 
+		if ((otroUsuario != null)) {
+
+			if (this.getNomina() > otroUsuario.getNomina()) {
+				return this;
+			} else if (this.getNomina() < otroUsuario.getNomina()) {
+				return otroUsuario;
+			} else {
+				return null;
+			}
+		}
+		return null;
+	}
+	
+	// Comprueba si la primera letra es A
+	public boolean esLetraA() {
+		// comprueba si el nombre es nulo
+		if (this.getNombre() != null) {
+			// obtienes el nombre y revisa en la posición 0 y lo compara con A
+			if (this.getNombre().charAt(0) == 'A') {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	// devuelve la cantidad de caracteres que tiene nombre
+	public int contarCaracteresNombre() {
+		return this.getNombre().length();
+	}
+
+	
+	
 
 	public String getNombre() {
 		return nombre;
