@@ -1,0 +1,75 @@
+package basico;
+
+public class Autor {
+
+	private int id;
+	private String nombre, apellidos, nacionalidad;
+
+	public Autor(int id, String nombre, String apellidos, String nacionalidad) {
+		
+		this.id = id;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.nacionalidad = nacionalidad;
+	}
+
+	public void mostrarDatos() {
+		
+		System.out.println("ID: " + this.getId());
+		System.out.println("Nombre: " + this.getNombre());
+		System.out.println("Apellidos: " + this.getApellidos());
+		System.out.println("Nacionalidad: " + this.getNacionalidad());
+		
+	}
+	
+	public boolean comprarAutor(Autor otroAutor) {
+		
+		if (otroAutor != null) {
+			
+			if (this.getId() == otroAutor.getId()) {
+				return true;
+			}
+		return false;
+		}
+		return false;
+		
+	}
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+	public String getNacionalidad() {
+		return nacionalidad;
+	}
+
+	public void setNacionalidad(String nacionalidad) {
+		this.nacionalidad = nacionalidad;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
+	
+
+	
+}
