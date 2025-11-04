@@ -20,5 +20,23 @@ public class Utilidades {
 		}
 		return true; // Si todos los caracteres eran dígitos
 	}
+	// comprueba si el texto solo tiene letras en ingles
+	public static boolean soloLetrasIngles(String texto) {
+		char caracter;
+		if (texto == null || texto.isEmpty()) {
+			
+			return false;
+			
+		}
+		
+		for(int i = 0; i < texto.length(); i++) {
+			caracter = texto.charAt(i);
+			// Si no está entre a y z ni A y Z, devuelve false
+			if (!((caracter >= 'A' && caracter <= 'Z') || (caracter >= 'a' && caracter <= 'z'))) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 }

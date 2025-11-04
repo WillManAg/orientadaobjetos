@@ -11,6 +11,7 @@ public class Usuario {
 	public Usuario(String nombre, double nomina) {
 		this.id = ++idGenerado;
 		this.nombre = nombre;
+		this.nombre = this.sugerirNombre();
 		this.nomina = nomina;
 	}
 	
@@ -53,7 +54,7 @@ public class Usuario {
 	// llama el método estático que está en UtilidadesNumeros para calcular si es par
 	
 	public void decrementarSalarioPar() {
-		
+		// llamamos al metodo con el nombre de la clase porque es static
 		if (UtilidadesNumeros.esPar(this.id)) {
 			this.nomina = this.nomina * 0.80;
 		}
@@ -164,6 +165,27 @@ public class Usuario {
 		return true;
 	}
 	
+	private String sugerirNombre() {
+		int numero;
+		String nombreSugerido = this.nombre;
+		
+		if (nombre == null || nombre.isEmpty()) {
+			
+			return null;
+		}
+		
+		if (Utilidades.soloLetrasIngles(this.nombre)) {
+
+			// si ha pasado las comprobaciones de nombre sin digitos, genera un numero aleatorio entre 1 y 1000
+			numero = (int) (Math.random() * 1000) + 1;
+			// transfora el numero a string y se lo concatena a nombre sugerido
+			nombreSugerido+=String.valueOf(numero);
+			
+		}
+		
+		return nombreSugerido;
+		
+	}
 	
 	
 	

@@ -14,7 +14,7 @@ public class MainMenu {
 		 */
 		Usuario usuario1 = null;
 
-		int opcion, id;
+		int opcion;
 		String nombre;
 		Double saldo;
 
@@ -50,8 +50,6 @@ public class MainMenu {
 			switch (opcion) {
 			// con el parse Int lo pasa a valor entero.
 			case 1:
-				System.out.println("Id");
-				id = Integer.parseInt(teclado.nextLine());
 				System.out.println("nombre");
 				nombre = teclado.nextLine();
 				System.out.println("saldo");
