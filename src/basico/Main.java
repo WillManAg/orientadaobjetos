@@ -8,9 +8,9 @@ public class Main {
 		Usuario usu1, usu2, usu3;
 
 		
-		usu1 = new Usuario(1, "William", 1600.00);
-		usu2 = new Usuario(11, "Wilson", 400.00);
-		usu3 = new Usuario(3, "Robert", 2400.00);
+		usu1 = new Usuario("William", 1600.00);
+		usu2 = new Usuario("Wilson", 400.00);
+		usu3 = new Usuario("Robert", 2400.00);
 		
 		System.out.println("Usu1");
 		// imprime un mostrar datos, no necesita un pln

@@ -56,7 +56,7 @@ public class MainMenu {
 				nombre = teclado.nextLine();
 				System.out.println("saldo");
 				saldo = Double.parseDouble(teclado.nextLine());
-				usuario1 = new Usuario(id, nombre, saldo);
+				usuario1 = new Usuario(nombre, saldo);
 				break;
 			case 2:
 				if (usuario1 != null) {

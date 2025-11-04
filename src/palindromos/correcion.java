@@ -41,6 +41,7 @@ public class correcion {
 		
 	}
 	
+	// detecta si en el texto minusculas hay letras y las guarda
 	private String limpiarTexto(String minusculas) {
 		String soloLetras = "";
 		

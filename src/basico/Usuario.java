@@ -5,10 +5,11 @@ public class Usuario {
 	private int id;
 	private String nombre;
 	private double nomina;
+	private static int idGenerado;
 	
 	
-	public Usuario(int id, String nombre, double nomina) {
-		this.id = id;
+	public Usuario(String nombre, double nomina) {
+		this.id = ++idGenerado;
 		this.nombre = nombre;
 		this.nomina = nomina;
 	}
@@ -16,11 +17,13 @@ public class Usuario {
 	
 	
 
-	public Usuario() {
-		this.id = 1;
-	    this.nombre = "Usuario no creado";
-	    this.nomina = 0.0;
-	}
+	/* Crea un usuario por defecto
+	 * public Usuario() { 
+	 * this.id = 1; 
+	 * this.nombre = "Usuario no creado";
+	 * this.nomina = 0.0; 
+	 * }
+	 */
 
 
 
@@ -46,13 +49,18 @@ public class Usuario {
 		
 	}
 	
+
+	// llama el método estático que está en UtilidadesNumeros para calcular si es par
+	
 	public void decrementarSalarioPar() {
 		
-		if (this.id % 2== 0) {
+		if (UtilidadesNumeros.esPar(this.id)) {
 			this.nomina = this.nomina * 0.80;
 		}
 		
 	}
+	
+	// compara el sueldo del usuario por el que es llamado para compararlo con otro usuario y devuelve qué usuario tiene mayor sueldo
 	
 	public Usuario compararSueldos(Usuario otroUsuario) {
 
@@ -155,6 +163,7 @@ public class Usuario {
 		}
 		return true;
 	}
+	
 	
 	
 	
