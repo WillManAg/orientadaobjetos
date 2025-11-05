@@ -6,14 +6,18 @@ public class Usuario {
 	private String nombre;
 	private double nomina;
 	private static int idGenerado;
+	private Libro libroFavorito;
 	
 	
-	public Usuario(String nombre, double nomina) {
+	public Usuario(String nombre, double nomina, Libro libroFavorito) {
 		this.id = ++idGenerado;
 		this.nombre = nombre;
 		this.nombre = this.sugerirNombre();
 		this.nomina = nomina;
+		this.libroFavorito = libroFavorito;
 	}
+	
+	
 	
 	
 	
@@ -187,6 +191,32 @@ public class Usuario {
 		
 	}
 	
+	// 24. Método en Usuario: recibe un usuario y devuelve si sus libros favoritos son del mismo año
+	
+	public boolean favoritoMismoAño(Usuario otroUsuario) {
+		
+		if (otroUsuario != null) {
+			
+			return this.libroFavorito.publicadoIgual(otroUsuario.libroFavorito);
+			
+			
+			
+		}
+		
+		return false;
+	}
+	
+	public boolean favoritoAutorNacionalidad(Usuario otroUsuario) {
+
+		if (otroUsuario != null) {
+
+			return this.libroFavorito.comprarNacionalidadAutor(otroUsuario.libroFavorito);
+
+		}
+
+		return false;
+	}
+	
 	
 	
 
@@ -216,6 +246,24 @@ public class Usuario {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+
+
+
+
+
+	public Libro getLibroFavorito() {
+		return libroFavorito;
+	}
+
+
+
+
+
+
+	public void setLibroFavorito(Libro libroFavorito) {
+		this.libroFavorito = libroFavorito;
 	}
 	
 	

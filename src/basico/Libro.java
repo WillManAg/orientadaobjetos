@@ -67,7 +67,7 @@ public class Libro {
 
 	}
 	
-	public boolean comprarAutor(Libro otroLibro) {
+	public boolean compararAutor(Libro otroLibro) {
 		
 		if ((otroLibro != null)) {
 
@@ -88,6 +88,17 @@ public class Libro {
 		}
 		return false;
 	}
+	
+	public boolean compararLibros(Libro otroLibro) {
+		
+		if ((otroLibro != null)) {
+			
+			return (this.compararAutor(otroLibro) && this.titulo.equals(otroLibro.titulo) && this.añoPublicacion == otroLibro.añoPublicacion);
+			
+		}
+		return false;
+	}
+	
 	
 	
 	
