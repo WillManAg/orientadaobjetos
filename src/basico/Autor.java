@@ -22,14 +22,11 @@ public class Autor {
 		
 	}
 	
-	public boolean comprarAutor(Autor otroAutor) {
+	public boolean compararAutor(Autor otroAutor) {
 		
 		if (otroAutor != null) {
-			
-			if (this.getId() == otroAutor.getId()) {
-				return true;
-			}
-		return false;
+			// devuelve verdadero si se da, falso si no se da
+			return this.id==otroAutor.id;
 		}
 		return false;
 		
