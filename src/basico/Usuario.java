@@ -7,14 +7,18 @@ public class Usuario {
 	private double nomina;
 	private static int idGenerado;
 	private Libro libroFavorito;
+	private Libro proximoLibro;
+	private String contraseña;
 	
 	
-	public Usuario(String nombre, double nomina, Libro libroFavorito) {
+	public Usuario(String nombre, double nomina, Libro libroFavorito, Libro proximoLibro, String contraseña) {
 		this.id = ++idGenerado;
 		this.nombre = nombre;
 		this.nombre = this.sugerirNombre();
 		this.nomina = nomina;
 		this.libroFavorito = libroFavorito;
+		this.proximoLibro = proximoLibro;
+		this.contraseña = contraseña;
 	}
 	
 	
@@ -217,6 +221,58 @@ public class Usuario {
 		return false;
 	}
 	
+	public boolean libroFavoritoMismoProximo(Usuario otroUsuario) {
+
+		return otroUsuario.libroFavorito.compararLibros(this.proximoLibro);
+
+	}
+
+	public boolean libroFavoritoMismoAutor(Usuario otroUsuario) {
+
+		return otroUsuario.libroFavorito.compararAutor(this.proximoLibro);
+
+	}
+	
+	// 29. Método privado en Usuario para validar contraseña. Es válida si tiene longitud mínima 8, contiene al menos una mayúscula, al menos una minúscula y al menos un carácter que no sea una letra.
+	
+	private boolean contraseñaValida() {
+
+		char caracter;
+		boolean hayMayus = false;
+		boolean hayMinus = false;
+		boolean hayCaracter = false;
+
+		if (this.contraseña == null || this.contraseña.length() < 8) {
+			return false;
+		}
+
+		for (int i = 0; i < this.contraseña.length(); i++) {
+
+			caracter = this.contraseña.charAt(i);
+
+			    // Character.isUpperCase(caracter)
+			if (caracter >= 'A' && caracter <= 'Z') {
+
+				hayMayus = true;
+
+				       // Character.isLowerCase(caracter)
+			} else if (caracter >= 'a' && caracter <= 'z') {
+
+				hayMinus = true;
+
+			}
+
+			//  !Character.isLetter(caracter)
+			if (!((caracter >= 'A' && caracter <= 'Z') || (caracter >= 'a' && caracter <= 'z'))) {
+				hayCaracter = true;
+			}
+
+		}
+		// Si todas son verdaderas se dará true
+		return hayMayus && hayMinus && hayCaracter;
+		
+	}
+	
 	
 	
 
@@ -246,6 +302,60 @@ public class Usuario {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+
+
+	
+
+
+	public static int getIdGenerado() {
+		return idGenerado;
+	}
+
+
+
+
+
+
+	public static void setIdGenerado(int idGenerado) {
+		Usuario.idGenerado = idGenerado;
+	}
+
+
+
+
+
+
+	public String getContraseña() {
+		return contraseña;
+	}
+
+
+
+
+
+
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
+	}
+
+
+
+
+
+
+	public Libro getProximoLibro() {
+		return proximoLibro;
+	}
+
+
+
+
+
+
+	public void setProximoLibro(Libro proximoLibro) {
+		this.proximoLibro = proximoLibro;
 	}
 
 
