@@ -1,4 +1,5 @@
 package basico;
+import java.time.LocalDate;
 
 public class Usuario {
 	
@@ -9,9 +10,10 @@ public class Usuario {
 	private Libro libroFavorito;
 	private Libro proximoLibro;
 	private String contraseña;
+	private LocalDate fechaAlta;
 	
 	
-	public Usuario(String nombre, double nomina, Libro libroFavorito, Libro proximoLibro, String contraseña) {
+	public Usuario(String nombre, double nomina, Libro libroFavorito, Libro proximoLibro, String contraseña, LocalDate fechaAlta) {
 		this.id = ++idGenerado;
 		this.nombre = nombre;
 		this.nombre = this.sugerirNombre();
@@ -24,6 +26,7 @@ public class Usuario {
 			this.contraseña=null;
 		}
 		this.contraseña=Cesar.codificar(this.contraseña);
+		this.fechaAlta = fechaAlta;
 		
 	}
 	
@@ -280,6 +283,27 @@ public class Usuario {
 		
 	}
 	
+	// Comparar fecha de creación de usuario gracias el isEqual de LocalDate
+	public boolean mismaFechaAlta(Usuario otroUsuario) {
+	    return this.fechaAlta.isEqual(otroUsuario.getFechaAlta());
+	}
+	
+	public void incrementoPorFechaAlta() {
+	    
+		// primero creamos los parámetros entre los que se va a calcular la fecha
+	    LocalDate inicio = LocalDate.of(2000, 1, 1);
+	    LocalDate fin = LocalDate.of(2008, 1, 1);
+
+	    // Si fechaAlta está dentro del rango (incluyendo extremos) importante indicar que sea la misma del inicio O después de
+	    if ((this.fechaAlta.isEqual(inicio) || this.fechaAlta.isAfter(inicio)) &&
+	        (this.fechaAlta.isEqual(fin) || this.fechaAlta.isBefore(fin))) {
+
+	        this.nomina += 200; 
+	    }
+	}
+
+
+	
 	
 
 	public String getNombre() {
@@ -346,5 +370,15 @@ public class Usuario {
 	public void setLibroFavorito(Libro libroFavorito) {
 		this.libroFavorito = libroFavorito;
 	}
+	
+	public LocalDate getFechaAlta() {
+		return fechaAlta;
+	}
+
+	public void setFechaAlta(LocalDate fechaAlta) {
+		this.fechaAlta = fechaAlta;
+	}
+	
+	
 	
 }
