@@ -19,6 +19,12 @@ public class Usuario {
 		this.libroFavorito = libroFavorito;
 		this.proximoLibro = proximoLibro;
 		this.contraseña = contraseña;
+		// Validar contraseña, si no es valida, la cambiamos a nulo
+		if (!this.contraseñaValida()) {
+			this.contraseña=null;
+		}
+		this.contraseña=Cesar.codificar(this.contraseña);
+		
 	}
 	
 	
@@ -43,6 +49,7 @@ public class Usuario {
 		System.out.println("Id: " + this.getId());
 		System.out.println("Nombre: " + this.getNombre());
 		System.out.println("Salario: " + this.getNomina());
+		System.out.println("Contraseña: " + this.getContraseña());
 		
 	}
 	
@@ -274,7 +281,6 @@ public class Usuario {
 	}
 	
 	
-	
 
 	public String getNombre() {
 		return nombre;
@@ -305,77 +311,40 @@ public class Usuario {
 	}
 
 
-
-	
-
-
 	public static int getIdGenerado() {
 		return idGenerado;
 	}
-
-
-
-
-
 
 	public static void setIdGenerado(int idGenerado) {
 		Usuario.idGenerado = idGenerado;
 	}
 
-
-
-
-
-
 	public String getContraseña() {
 		return contraseña;
 	}
 
-
-
-
-
-
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
+		if (!this.contraseñaValida()) {
+			this.contraseña=null;
+		}
+		this.contraseña=Cesar.codificar(this.contraseña);
 	}
-
-
-
-
-
 
 	public Libro getProximoLibro() {
 		return proximoLibro;
 	}
 
-
-
-
-
-
 	public void setProximoLibro(Libro proximoLibro) {
 		this.proximoLibro = proximoLibro;
 	}
-
-
-
-
-
 
 	public Libro getLibroFavorito() {
 		return libroFavorito;
 	}
 
-
-
-
-
-
 	public void setLibroFavorito(Libro libroFavorito) {
 		this.libroFavorito = libroFavorito;
 	}
 	
-	
-
 }
