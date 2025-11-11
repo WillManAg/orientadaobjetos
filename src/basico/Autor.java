@@ -6,7 +6,7 @@ public class Autor {
 	private String nombre, apellidos, nacionalidad;
 
 	public Autor(int id, String nombre, String apellidos, String nacionalidad) {
-		
+
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -14,25 +14,30 @@ public class Autor {
 	}
 
 	public void mostrarDatos() {
-		
+
 		System.out.println("ID: " + this.getId());
 		System.out.println("Nombre: " + this.getNombre());
 		System.out.println("Apellidos: " + this.getApellidos());
 		System.out.println("Nacionalidad: " + this.getNacionalidad());
-		
+
 	}
+
+	/**
+	 * Revisa la id de los usuarios
+	 * @param otroAutor el autor con el que lo compara
+	 * @return devuelve true si son iguales, también compara si no es null
+	 */
 	
 	public boolean compararAutor(Autor otroAutor) {
-		
+
 		if (otroAutor != null) {
 			// devuelve verdadero si se da, falso si no se da
-			return this.id==otroAutor.id;
+			return this.id == otroAutor.id;
 		}
 		return false;
-		
+
 	}
-	
-	
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -64,9 +69,5 @@ public class Autor {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	
-	
 
-	
 }

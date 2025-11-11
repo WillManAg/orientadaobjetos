@@ -1,5 +1,6 @@
 package basico;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class MainMenu {
@@ -13,6 +14,8 @@ public class MainMenu {
 		 * double userNomina;
 		 */
 		Usuario usuario1 = null;
+		Autor autor1 = new Autor(1, "Ernesto", "Hernandez", "Española");
+		Libro libro1 = new Libro(1, "Hola", autor1, 1993);
 
 		int opcion;
 		String nombre;
@@ -54,7 +57,7 @@ public class MainMenu {
 				nombre = teclado.nextLine();
 				System.out.println("saldo");
 				saldo = Double.parseDouble(teclado.nextLine());
-				usuario1 = new Usuario(nombre, saldo);
+				Usuario usu1 = new Usuario("Roberto", 1600.00, libro1, libro1, "Arroz123", LocalDate.of(2025, 04, 27));
 				break;
 			case 2:
 				if (usuario1 != null) {

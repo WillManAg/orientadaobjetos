@@ -283,10 +283,21 @@ public class Usuario {
 		
 	}
 	
+	/**
+	 * Compara fechas de alta de dos usuarios
+	 * @param otroUsuario el otro usuario
+	 * @return true si misma fecha, false si no
+	 */
+	
 	// Comparar fecha de creación de usuario gracias el isEqual de LocalDate
 	public boolean mismaFechaAlta(Usuario otroUsuario) {
 	    return this.fechaAlta.isEqual(otroUsuario.getFechaAlta());
 	}
+	
+	/**
+	 * Incrementa el sueldo según la fecha de alta
+	 * si el alta fue entre las 2 fechas especificadas, aumenta 200 la nómina
+	 */
 	
 	public void incrementoPorFechaAlta() {
 	    
