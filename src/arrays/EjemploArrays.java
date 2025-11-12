@@ -1,11 +1,17 @@
 package arrays;
+import java.util.Scanner;
 
 public class EjemploArrays {
 
 	public static void main(String[] args) {
 		
+		Scanner teclado = new Scanner(System.in);
+		
 		// primero el tipo, luego lo almacenado y por último el nombre del array
 		int[] numeros;
+		
+		// Arrays de strings
+		String[] cadenas;
 		
 		// aquí reservamos la memoria de cuántos objetos va a manejar como máximo el array
 		numeros = new int[10];
@@ -44,8 +50,30 @@ public class EjemploArrays {
 			System.out.println(numero);
 		}
 		
+		// esto reserva espacio para tener 10 cadenas de texto
+		cadenas = new String[10];
+		
+		// permite meter texto a cada hueco reservado del array
+		for (int i = 0; i < cadenas.length; i++) {
+
+			// System.out.println(cadenas[i]); PARA IMPRIMIR LO QUE TIENE
+			
+			System.out.println("Introduce una cadena de texto");
+			cadenas[i] = teclado.nextLine();
+
+		}
+		
+		// recorre toda las cadenas y muestra lo que hay en el espacio de memoria reservado de cadenas
+		for (int i = 0; i < cadenas.length; i++) {
+
+			System.out.println(cadenas[i]);
+
+
+		}
 		
 		
+
+		teclado.close();
 	}
 
 }
