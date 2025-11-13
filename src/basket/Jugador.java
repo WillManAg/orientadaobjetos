@@ -2,6 +2,7 @@ package basket;
 
 public class Jugador {
 	
+	private int id;
 	private String nombre;
 	private double altura;
 	private double porcentajeDos;
@@ -9,6 +10,7 @@ public class Jugador {
 	
 	public Jugador() {
 		
+		this.id = 0;
 		this.nombre = "Jugador";
 		this.altura = 1.85;
 		this.porcentajeDos = 40;
@@ -16,8 +18,9 @@ public class Jugador {
 		
 	}
 	
-	public Jugador(String nombre, double altura, double porcentajeDos, double porcentajeTres) {
+	public Jugador(int id, String nombre, double altura, double porcentajeDos, double porcentajeTres) {
 		
+		this.id = id;
 		this.nombre = nombre;
 		this.altura = altura;
 		this.porcentajeDos = porcentajeDos;
@@ -93,6 +96,24 @@ public class Jugador {
 		}
 		
 	}
+	
+	public void mostrarJugador() {
+		
+		System.out.println("Datos jugador:");
+		System.out.println("id: " + this.id);
+		System.out.println("Nombre " + this.nombre);
+		System.out.println("Altura " + this.altura);
+		System.out.println("Porcentaje de Dos " + this.porcentajeDos);
+		System.out.println("Porcentaje de Tres " + this.porcentajeTres);
+		
+	}
+	
+	// comprueba si 2 parámetros son iguales
+	public boolean mismoJugador(Jugador otroJugador) {
+		
+		return this.id == otroJugador.id;
+		
+	}
 
 	public double getAltura() {
 		return altura;
@@ -130,6 +151,14 @@ public class Jugador {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

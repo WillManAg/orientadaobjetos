@@ -9,7 +9,7 @@ public class Main {
 		int contadorCanastas = 0;
 		
 		jugador1 = new Jugador();
-		jugador2 = new Jugador("MJ",2.07, 50, 50);
+		jugador2 = new Jugador(2, "MJ",2.07, 50, 50);
 	
 		System.out.println("Jugador 1: De dos " + jugador1.getPorcentajeDos());
 		System.out.println("Jugador 1: De tres " + jugador1.getPorcentajeTres());
