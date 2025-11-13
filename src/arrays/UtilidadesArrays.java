@@ -129,5 +129,23 @@ public class UtilidadesArrays {
 		return cifrado;
 		
 	}
+	
+	// Se queda con la cadena que más caracteres tiene
+	
+	public static String cadenaMayor(String[] cadenas) {
+		
+		String mayor = cadenas[0];
+		// empezamos en 1 porque el 0 ya lo tengo almacenado
+		for (int i = 1; i < cadenas.length; i++) {
+			
+			if (cadenas[i].length() > mayor.length()) {
+				mayor = cadenas[i];
+			}
+			
+		}
+		
+		return mayor;
+		
+	}
 
 }
