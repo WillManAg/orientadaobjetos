@@ -27,24 +27,24 @@ public class Equipo {
 		return false;
 	}
 	
+	// elimina un jugador del array pero usa el método de buscar si el jugador existe!
+	
 	public boolean eliminarJugador(Jugador jugador) {
 
-		for (int i = 0; i < jugadores.length; i++) {
+		int posicion;
 
-			if (jugadores[i] != null) {
-				if (jugadores[i].mismoJugador(jugador)) {
-					jugadores[i] = null;
-					return true;
-				}
-			}
+		posicion = this.buscarJugador(jugador);
 
+		if (posicion != -1) {
+			this.jugadores[posicion] = null;
 		}
 
 		return false;
 
 	}
+
 	
-	
+	// mostrar el array del equipo siempre que no sean nulos
 	public void mostrarEquipo() {
 
 		for (int i = 0; i < jugadores.length; i++) {
@@ -56,6 +56,37 @@ public class Equipo {
 			}
 		}
 
+	}
+	
+	public boolean sustituirEquipo(Jugador jugador1, Jugador jugador2) {
+		
+		int posicion;
+		
+		posicion = this.buscarJugador(jugador1);
+		
+		if (posicion != -1) {
+			this.jugadores[posicion] = jugador2;
+		}
+		
+		return false;
+	}
+	
+	public int buscarJugador(Jugador jugador) {
+
+		if (jugador != null) {
+
+			for (int i = 0; i < this.jugadores.length; i++) {
+
+				if (this.jugadores[i] != null) {
+
+					if (this.jugadores[i].mismoJugador(jugador)) {
+						return i;
+					}
+				}
+			}
+
+		}
+		return -1;
 	}
 	
 }

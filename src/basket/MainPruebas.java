@@ -26,6 +26,11 @@ public class MainPruebas {
 		
 		miEquipo.añadirJugador(jugador1);
 		miEquipo.mostrarEquipo();
+		
+		miEquipo.sustituirEquipo(jugador1, jugador2);
+		System.out.println("Nuevo equipo");
+		
+		miEquipo.mostrarEquipo();
 
 	}
 
