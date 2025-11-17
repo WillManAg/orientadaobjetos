@@ -6,7 +6,7 @@ public class MainPruebas {
 
 	public static void main(String[] args) {
 		
-		int [] numeros = {1,2,3,4,5,6,7};
+		int [] numeros = {2,4,5,7,1,3,9,8,6};
 		
 		System.out.println("Array original: " );
 		
