@@ -89,4 +89,37 @@ public class Equipo {
 		return -1;
 	}
 	
+	// va a trabajar con el equipo que está en Equipo osea jugadores
+	
+	public Jugador mejorPorcentajeDeDos() {
+
+		Jugador mejorJugador;
+
+		mejorJugador = this.jugadores[0];
+
+		for (int i = 0; i < jugadores.length; i++) {
+
+			if (this.jugadores[i] != null) {
+
+				if (this.jugadores[i].getPorcentajeDos() > mejorJugador.getPorcentajeDos()) {
+					mejorJugador = this.jugadores[i];
+				}
+
+			}
+		}
+
+		return mejorJugador;
+
+	}
+
+	public Jugador[] getJugadores() {
+		return jugadores;
+	}
+
+	public void setJugadores(Jugador[] jugadores) {
+		this.jugadores = jugadores;
+	}
+	
+	
+	
 }

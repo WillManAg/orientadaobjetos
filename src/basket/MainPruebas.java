@@ -1,5 +1,7 @@
 package basket;
 
+import java.util.Arrays;
+
 public class MainPruebas {
 
 	public static void main(String[] args) {
@@ -10,10 +12,12 @@ public class MainPruebas {
 		
 		// le damos valores al objeto
 		jugador1 = new Jugador();
-		jugador2 = new Jugador(2, "MJ",2.07, 50, 50);
+		jugador2 = new Jugador(2, "MJ",2.07, 22, 50);
+		jugador2 = new Jugador(3, "LM",1.02, 28, 56);
+		jugador2 = new Jugador(4, "Coby",3.00, 99, 70);
 		
 		// este objeto solo nos pide el numero de jugadores
-		miEquipo = new Equipo(12);
+		miEquipo = new Equipo(4);
 		
 		// ejecutamos metodo de añadir pero como es booleano tenemos una respuesta de si se añadió o no
 		
@@ -31,6 +35,11 @@ public class MainPruebas {
 		System.out.println("Nuevo equipo");
 		
 		miEquipo.mostrarEquipo();
+		
+		// System.out.println("Array ordenado: ");
+		
+		// Arrays.sort(miEquipo.getJugadores());
+		
 
 	}
 

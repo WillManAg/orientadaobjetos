@@ -2,10 +2,10 @@ package algoritmos;
 
 public class Ordenar {
 
-    // Método que ordena un arreglo de enteros de menor a mayor
+    // Método que ordena un array de enteros de menor a mayor
     public int[] menorAMayor(int[] numeros) {
 
-        // Recorre el arreglo desde el inicio hasta el penúltimo elemento
+        // Recorre el array desde el inicio hasta el penúltimo elemento
         for (int i = 0; i < numeros.length - 1; i++) {
 
             // Guarda la posición del valor más pequeño encontrado hasta ahora
