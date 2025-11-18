@@ -40,6 +40,11 @@ public class MainPruebas {
 		
 		// Arrays.sort(miEquipo.getJugadores());
 		
+		Jugador mejorJugador = miEquipo.mejorPorcentajeDeDos();
+		
+		System.out.println("El mejor jugador en tiros de 2 es: " + mejorJugador.getNombre());
+
+		
 
 	}
 
