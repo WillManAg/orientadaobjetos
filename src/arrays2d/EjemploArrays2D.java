@@ -7,6 +7,7 @@ public class EjemploArrays2D {
 	public static void main(String[] args) {
 		
 		int[][] tablero;
+		int numeroMenor;
 		
 		Scanner teclado = new Scanner(System.in);
 		
@@ -42,6 +43,8 @@ public class EjemploArrays2D {
 			System.out.println();
 			
 		}
+		
+		numeroMenor = UtilidadesArrays2d.valorMinimo(tablero);
 				
 	}
 
