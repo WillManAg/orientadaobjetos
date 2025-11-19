@@ -47,4 +47,48 @@ public class UtilidadesArrays2d {
 		}
 		return null;
 	}
+	
+	// un metodo que comprueba si 2 arrays tienen las mismas dimensiones
+	
+	public static boolean mismasDimensiones(int[][] matrizUno, int[][] matrizDos) {
+
+		// primero comprobamos si tiene el mismo número de filas
+		if (matrizUno.length != matrizDos.length) {
+			return false; // devuelve son distintas
+		}
+
+		// ahora entramos a las columnas
+		for (int i = 0; i < matrizUno.length; i++) {
+			// revisa columna la longitud de la fila 0 y si no es la misma longitud que el
+			// array 0 de la matriz 2 devuelve false
+			if (matrizUno[i].length != matrizDos[i].length) {
+				return false; // devuelve columnas distintas
+			}
+		}
+
+		return true;
+	}
+
+	
+	// Realizar un método que sume 2 matrices y devuelva el resultado
+	
+	public static int[][] sumaMatriz(int[][] matrizUno, int[][] matrizDos) {
+		
+		if(!mismasDimensiones(matrizUno, matrizDos)) { // la puedo llamar porque está en el mismo archivo
+			return null;
+		}
+		
+		int matrizSumada[][] = new int[matrizUno.length][matrizUno[0].length]; // la columna se mide mirando primero el numero de filas y luego la longitud de la fila 0 suponiendo que es cuadricular
+		
+		for (int i = 0; i < matrizUno.length; i++) {
+			
+			for (int j = 0; j < matrizUno.length; j++) {
+				
+			}
+			
+		}
+		
+	}
+	
+	
 }
