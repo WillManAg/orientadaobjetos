@@ -56,6 +56,14 @@ public class UtilidadesArrays2d {
 		if (matrizUno.length != matrizDos.length) {
 			return false; // devuelve son distintas
 		}
+		
+		for (int i = 1; i < matrizUno.length; i++) {
+			// comprueba si es rectangular mirando cada fila y comparandola con la 0
+			if (matrizUno[0].length != matrizUno[i].length) {
+				return false;
+			}
+			
+		}
 
 		// ahora entramos a las columnas
 		for (int i = 0; i < matrizUno.length; i++) {
@@ -82,12 +90,15 @@ public class UtilidadesArrays2d {
 		
 		for (int i = 0; i < matrizUno.length; i++) {
 			
-			for (int j = 0; j < matrizUno.length; j++) {
+			for (int j = 0; j < matrizUno[i].length; j++) {
+				
+				matrizSumada[i][j] = matrizUno[i][j] + matrizDos[i][j];
 				
 			}
 			
 		}
 		
+		return matrizSumada;
 	}
 	
 	
