@@ -74,7 +74,7 @@ public class Agenda {
 	// buscar contacto por id
 	public int buscarIndicePorId(int id) {
 		for (int i = 0; i < contactos.length; i++) {
-			// miramos la id de todos los contactos que no sean null y si la id es igual que la recibida, revolvemos la posición del contacto con esa id
+			// miramos la id de todos los contactos que no sean null y si la id es igual que la recibida, devolvemos la posición en el array en la que se encuentra el contacto con esa id
 			if (contactos[i] != null && contactos[i].getId() == id) {
 				return i;
 			}
