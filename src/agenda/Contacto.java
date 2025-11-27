@@ -40,6 +40,20 @@ public class Contacto {
 	public boolean mismoContacto(Contacto otroContacto) {
 		return this.id == otroContacto.id;
 	}
+	
+	public boolean mismoContactoNombre(String prefijo) {
+
+		// miramos todo el array pero hasta la posición del prefijo que nos dan
+		    for (int i = 0; i < prefijo.length(); i++) {
+		    	// cogemos el caracter del nombre, en la misma posición que el caracter del prefijo obtenido
+		        if (this.getNombre().charAt(i) != prefijo.charAt(i)) {
+		            return false;
+		        }
+		    }
+
+		    return true;
+		
+	}
 
 	public String getNombre() {
 		return nombre;

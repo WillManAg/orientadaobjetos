@@ -76,6 +76,30 @@ public class Agenda {
 		return false;
 	}
 	
-	
+	public void buscarPorNombre(String prefijo) {
+		// recorremos todo el array de contactos
+		for (int i = 0; i < contactos.length; i++) {
+			// miramos el contacto si coincide
+			if (contactos[i].mismoContactoNombre(prefijo)) {
+				// imprimimos el contacto que coincide
+				System.out.println("Este contacto coincide con tu busqueda: ");
+				System.out.println(contactos[i]);
+			}
+		}
+	}
+
+	public void mostrarAgenda() {
+		
+		for (int i = 0; i < contactos.length; i++) {
+			
+			if (contactos[i] != null) {
+				System.out.println("--------------------------------");
+				contactos[i].mostrarContacto();
+			
+			}
+			
+		}
+		
+	}
 	
 }
