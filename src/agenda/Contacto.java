@@ -23,6 +23,8 @@ public class Contacto {
 		this.fechaNacimiento = fechaNacimiento;
 	} 
 	
+	
+	// mostramos todos los datos del contacto
 	public void mostrarContacto() {
 		
 		System.out.println("CONTACTO AGENDADO CON ID: " + this.id);
@@ -32,6 +34,51 @@ public class Contacto {
 		System.out.println("Email: " + this.email);
 		System.out.println("Fecha de Nacimiento: " + this.fechaNacimiento);
 		
+	}
+	
+	// comparamos si un contacto tiene la misma id que el otro y devolvemos true o false
+	public boolean mismoContacto(Contacto otroContacto) {
+		return this.id == otroContacto.id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public LocalDate getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 	
 	

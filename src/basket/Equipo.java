@@ -37,6 +37,7 @@ public class Equipo {
 
 		if (posicion != -1) {
 			this.jugadores[posicion] = null;
+			return true;
 		}
 
 		return false;
