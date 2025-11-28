@@ -18,6 +18,40 @@ public class Main {
 				new Contacto("William", "Marin", "686773719", "d3v.william@gmail.com", LocalDate.of(1993, 4, 14)));
 		miagenda.añadirContacto(
 				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
+		miagenda.añadirContacto(
+				new Contacto("Miriam", "Chahdi", "654789321", "miriamchmangadi@gmail.com", LocalDate.of(2001, 9, 30)));
 
 		// creamos nuestro break porque por lo visto poner un fuucking break es ilegal y
 		// pecado capital
@@ -148,17 +182,66 @@ public class Main {
                         temporal.mostrarContacto();
                     }
                 } catch (NumberFormatException e) {
-                    System.out.println("ID no válido.");
+                    System.out.println("ID no válida.");
                 }
                 break;
                 
-			case 3:
+			case 3: // borrar contacto sin try/catch
+				
+				 System.out.println("--- BORRAR CONTACTO ---");
+                 System.out.print("Introduce el ID del contacto a borrar: ");
+                 String idDelStr = teclado.nextLine().trim();
+                 try {
+                     int idDel = Integer.parseInt(idDelStr);
+                     int idx = miagenda.buscarIndicePorId(idDel);
+                     if (idx == -1) {
+                         System.out.println("No existe un contacto con ID " + idDel);
+                     } else {
+                         Contacto contactoBorrar = miagenda.getContactoEnIndice(idx);
+                         System.out.println("Contacto a borrar:");
+                         contactoBorrar.mostrarContacto();
+                         System.out.print("¿Seguro que quieres borrarlo? (s/n): ");
+                         String confirma = teclado.nextLine().trim().toLowerCase();
+                         if (confirma.equals("s") || confirma.equals("si") || confirma.equals("sí")) {
+                             boolean ok = miagenda.borrarContacto(contactoBorrar);
+                             if (ok) System.out.println("Contacto borrado.");
+                             else System.out.println("Error al borrar el contacto.");
+                         } else {
+                             System.out.println("Borrado cancelado.");
+                         }
+                     }
+                 } catch (NumberFormatException e) {
+                     System.out.println("ID no válido.");
+                 }
+                 break;
+                
+			case 4: // Encontrar contacto x las iniciales que nos proporcionen
+				
+				System.out.println("--- Buscar contacto ---");
+				System.out.println("Introduce las iniciales del contacto que buscas");
+				String iniciales = teclado.nextLine().trim();
+				
+				
+				miagenda.buscarPorNombre(iniciales);
+				
+				break;
 
-			case 4:
+			case 5: // Simplemente mostramos la agenda
+				
+				System.out.println("--- Mostrar Agenda ---");
+				miagenda.mostrarAgenda();
+				
+				break;
 
-			case 5:
-
-			case 6:
+			case 0: // opcion de salir
+				
+				System.out.println("¡Adiós mdfk!");
+                salir = true;
+                break;
+                
+			default:
+                System.out.println("Esa opción no está disponible");
+                break;
 
 			}
 

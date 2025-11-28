@@ -4,7 +4,7 @@ import java.time.LocalDate;
 public class Contacto {
 
 	// Variable estática para ir contando cada agendado
-	private static int idGenerado = 1;
+	private static int idGenerado;
 	private int id;
 	private String nombre;
 	private String apellido;

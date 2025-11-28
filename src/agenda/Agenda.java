@@ -17,7 +17,7 @@ public class Agenda {
 		System.out.println("1. Añadir contacto");
 		System.out.println("2. Editar contacto");
 		System.out.println("3. Borrar contacto");
-		System.out.println("4. Buscar contacto");
+		System.out.println("4. Buscar contacto x iniciales");
 		System.out.println("5. Mostrar agenda");
 		System.out.println("0. Salir");
 	}
