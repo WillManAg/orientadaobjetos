@@ -6,44 +6,40 @@ import java.util.Scanner;
 public class ArrayList2d {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-        final int numAlumnos = 10;  //número de alumnos
+		
+		Scanner teclado = new Scanner(System.in);
+		
+        final int numAlumnos = 10;  
         int i, j, nota, cont = 1;
-       
-        //crear un ArrayList bidimensional de enteros vacío
-        //Realmente se crea un ArrayList de ArrayLists de enteros
+
         ArrayList<ArrayList<Integer>> array = new ArrayList<>();                                        
-       
-        //Se leen las notas de cada alumno.
+
         System.out.println("Introduzca notas. < 0 para acabar");
         for(i=0;i < numAlumnos;i++){
             cont = 1;
             System.out.println("Alumno " + (i+1) + ": ");
             System.out.print("Nota " + cont + ": ");
-            nota = sc.nextInt();
+            nota = teclado.nextInt();
 
-           //para cada alumno se añade una nueva fila vacía
-           //esto es necesario porque el arrayList se crea vacío
             array.add(new ArrayList<Integer>());
 
             while(nota >= 0){
-                array.get(i).add(nota); //en la fila i se añade un nueva nota
+                array.get(i).add(nota); 
                 cont++;
                 System.out.print("Nota " + cont + ": ");
-                nota = sc.nextInt();             
+                nota = teclado.nextInt();             
             }           
         }
-       
-        //Mostrar todas las notas
+
         System.out.println("Notas de alumnos");
-        for(i=0;i < array.size();i++){                       //para cada alumno (para cada fila)
+        for(i=0;i < array.size();i++){                       
             System.out.print("Alumno " + i + ": ");
-            for(j=0;j < array.get(i).size();j++){            //se recorre todas la columnas de la fila            
-                System.out.print(array.get(i).get(j) + " "); //se obtiene el elemento i,j
+            for(j=0;j < array.get(i).size();j++){                    
+                System.out.print(array.get(i).get(j) + " "); 
             }
             System.out.println();          
         }
-
+        
+        teclado.close(); 
 	}
-
 }
