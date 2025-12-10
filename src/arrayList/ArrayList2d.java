@@ -19,15 +19,14 @@ public class ArrayList2d {
             cont = 1;
             System.out.println("Alumno " + (i+1) + ": ");
             System.out.print("Nota " + cont + ": ");
-            nota = teclado.nextInt();
-
+            nota = Integer.parseInt(teclado.nextLine());
             array.add(new ArrayList<Integer>());
 
             while(nota >= 0){
                 array.get(i).add(nota); 
                 cont++;
                 System.out.print("Nota " + cont + ": ");
-                nota = teclado.nextInt();             
+                nota = Integer.parseInt(teclado.nextLine());     
             }           
         }
 
